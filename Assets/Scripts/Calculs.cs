@@ -59,11 +59,12 @@ public static class Calculs
                 {
                     if (matrix[i, j] == 0)
                     {
-                        GameManager.Instance.DoMove(i, j, 1);
+                        GameManager.Instance.DoMove(i, j, 1, ref matrix);
+                        GameManager.Instance.lastMoveX = i;
+                        GameManager.Instance.lastMoveY = j;
                         return true;
                     }
                 }
-                //Debug.Log(CalculatePoint(i, j));
             }
         }
         return false;
